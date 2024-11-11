@@ -3,6 +3,7 @@ $PrivateFunctions = Get-ChildItem -Path "$PSScriptRoot\Private" -File -Filter "*
 
 foreach ($ScriptFile in @($PublicFunctions + $PrivateFunctions)) {
     try {
+        Write-Output -Message "ScriptFile $($ScriptFile.FullName)"
         . $ScriptFile.FullName
     }
     catch {

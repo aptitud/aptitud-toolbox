@@ -1,10 +1,10 @@
 $ErrorActionPreference = 'Stop'
 
 $RepositoryUrl = "https://github.com/aptitud/aptitud-toolbox.git"
-$InstallDirectory = "$HOME/aptitud-toolbox"
+$InstallDirectory = "$HOME\aptitud-toolbox"
 
 if (Test-Path $InstallDirectory) {
-    Write-Out "Directory $SetupFile already exists. To continue, remove directory and try again."
+    Write-Error -Message "Directory $InstallDirectory already exists. To continue, remove directory and try again."
     exit 1
 }
 

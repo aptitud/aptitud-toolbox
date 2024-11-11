@@ -1,6 +1,7 @@
 if(Get-Module -Name Functions -ListAvailable)
 {
     Import-Module Functions
+    Write-Output "Installed Functions"
 } else {
     $FirstModulePath = $env:PSModulePath -split ';' | Select-Object -First 1
     Write-Output "Installing 'Function' module to $FirstModulePath".
