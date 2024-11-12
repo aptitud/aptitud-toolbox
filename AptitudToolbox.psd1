@@ -22,6 +22,7 @@
         'Get-ToolboxPath',
         'Get-Secret',
         'Set-AccountSecret',
+        'Set-SecretLabels',
         "Update-AptitudToolbox"
     )
 

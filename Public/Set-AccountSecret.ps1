@@ -42,6 +42,8 @@ function Set-AccountSecret {
     [string]$Notes
   )  
   
+    Create-Secret -SecretName $SecretName
+
   Write-Output @"
 {
   "Username": "$Username",
