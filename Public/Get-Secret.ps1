@@ -77,7 +77,7 @@ function Get-Secret {
     $Selection = $SecretName
   }
   $Selection
-  $rawResult = gcloud secrets versions access latest --secret=$Selection # For now the project specified in gcloud but later (--project aptitud-secrets)
+  $rawResult = gcloud secrets versions access latest --secret=$Selection --project aptitud-secrets
   try {
     $Result = $rawResult | ConvertFrom-Json
   } catch {

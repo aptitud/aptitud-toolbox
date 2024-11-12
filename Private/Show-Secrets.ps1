@@ -5,7 +5,7 @@ function Show-Secrets {
     $SearchForLabel
   )
 
-  $list = gcloud secrets list --format="json" | ConvertFrom-Json # TODO use predefined project (--project aptitud-secrets)
+  $list = gcloud secrets list --project aptitud-secrets --format="json" | ConvertFrom-Json
 
   $Results = @()
   $Obj = @()

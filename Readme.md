@@ -4,14 +4,16 @@
 
 ## Requirements
 
-- Git
-- PowerShell Core
+-   Git
+-   PowerShell Core
 
 For some functionality you also need:
 
-- Google Cloud SDK
-- Google Cloud SDK PowerShell module (`Install-Module GoogleCloud`)
+-   Google Cloud SDK
+-   Google Cloud SDK PowerShell module (`Install-Module GoogleCloud`)
 
+Login with your aptitud account  
+`gcloud auth login`
 
 ## Installation
 
@@ -22,7 +24,6 @@ Run the following command in a PowerShell Core shell:
 ```
 
 This puts AptitudToolbox to the path where PowerShell looks for modules. Restart the PowerShell Core session.
-
 
 ## Functions
 
