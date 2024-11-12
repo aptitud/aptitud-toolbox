@@ -20,7 +20,8 @@
     FunctionsToExport = @(
         'Get-ToolboxCommands',
         'Get-ToolboxPath',
-        'Get-Secret'
+        'Get-Secret',
+        "Update-AptitudToolbox"
     )
 
     CmdletsToExport   = @()
