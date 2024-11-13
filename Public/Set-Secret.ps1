@@ -14,7 +14,7 @@
     Set-Secret -SecretName "MySecret" -Value "My Secret Value"
 .EXAMPLE
     Set-Secret -SecretName "MySecret" -File "c:\dev\my-secret-file.txt"
-    #>
+#>
 
 function Set-Secret {
   [CmdletBinding()]

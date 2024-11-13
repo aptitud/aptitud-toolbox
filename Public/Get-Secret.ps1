@@ -1,52 +1,29 @@
 <#
 .SYNOPSIS
-
-Get Secrets from Google Secret Manager
-
+    Get an Aptitud secret
 .DESCRIPTION
-
-The cmdlet has 2 parameter sets.
-Specify the SearchForName or SecretName parameter, but not both at the same time
-
-SearchForName: string matches regex pattern, will present a menu with selections
-SecretName: lookup known secret name
-
+    This function will try to get a secret from Google Secret Manger 
+    If more than one secrets are found a selection menu will be shown
+.PARAMETER SearchForName
+    Regex pattern search of secret names
+.PARAMETER SearchForLabel
+    Regex pattern search of labels
+.PARAMETER SecretName
+    Lookup known secret name
+.PARAMETER Clipboard
+    Switch used to get the result direct into your clipboard
 .EXAMPLE
-
-PS> > Get-Secret -SearchForName abc
-
+    PS> > Get-Secret -SearchForName "MySec"
 .EXAMPLE
-
-PS> > Get-Secret -SearchForName "abc|xyz"    
-
+    PS> > Get-Secret -SearchForLabel "application"
 .EXAMPLE
-
-PS> > Get-Secret abc
-
-Will default to SearchForName parameter
-
+    PS> > Get-Secret -Secretname "MySecret"
 .EXAMPLE
-
-PS> > Get-Secret -SearchForName abc -Clipboard
-
-Will copy password to clipboard
-
+    PS> > Get-Secret MySec
+    Will default to SearchForName parameter
 .EXAMPLE
-
-PS> > Get-Secret -SearchForName abc -SearchForLabel xyz
-
-Will list every secret with name containing "abc" and label containing "xyz"
-
-.EXAMPLE
-
-PS> > Get-Secret -SearchForLabel xyz
-
-Will list every secret with label containing "xyz"
-
-.EXAMPLE
-
-PS> > Get-Secret -SecretName secret_abc
-
+    PS> > Get-Secret -SecretName "MySecret" -Clipboard
+    Will copy secret value to clipboard
 #>
 function Get-Secret {
   [CmdletBinding()]
@@ -80,11 +57,11 @@ function Get-Secret {
   $rawResult = gcloud secrets versions access latest --secret=$Selection --project aptitud-secrets
   try {
     $Result = $rawResult | ConvertFrom-Json
-  } catch {
-    $Result = $rawResult
-    Write-Host "Warning: Secret was not in JSON format and has been returned as raw text." -ForegroundColor Yellow
   }
-
+  catch {
+    $Result = $rawResult
+    # Write-Host "Warning: Secret was not in JSON format and has been returned as raw text." -ForegroundColor Yellow
+  }
 
   if ($Clipboard) {
     Write-host "Copying secret to clipboard" -ForegroundColor Green

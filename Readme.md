@@ -32,3 +32,11 @@ To list all functions, you can use
 ```powershell
 Get-ToolboxCommands
 ```
+
+To get help about a function, you can type
+
+```powershell
+Get-Help <function>
+# For example
+Get-Help Set-Secret
+```
