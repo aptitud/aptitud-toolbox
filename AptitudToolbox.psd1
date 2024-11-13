@@ -23,6 +23,7 @@
         'Get-Secret',
         'Set-Secret',
         'Set-AccountSecret',
+        'Add-Secret',
         'Set-SecretLabels',
         "Update-AptitudToolbox"
     )

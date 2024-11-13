@@ -8,9 +8,9 @@ function Add-Secret {
   )  
   
   gcloud secrets create $SecretName --project aptitud-secrets 2>$null
-
-  if ($Labels) {
-    Update-SecretLabels $SecretName --Labels=$Labels
+  
+  if ($Labels.Trim().Length -gt 0) {
+    Update-SecretLabels $SecretName -Labels $Labels
   }
 }
 

@@ -1,12 +1,8 @@
 <#
 .SYNOPSIS
-
-Update the PowerShell module AptitudToolbox with the latest version
-
+    Update the PowerShell module AptitudToolbox with the latest version
 .EXAMPLE
-
-PS> > Update-AptitudToolbox
-
+    PS> > Update-AptitudToolbox
 #>
 function Update-AptitudToolbox {
 

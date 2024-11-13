@@ -9,9 +9,9 @@
     A key value pair list of labels to add to the secret
     Only hyphens (-), underscores (_), lowercase characters, and numbers are allowed
 .EXAMPLE
-    PS> > Set-SecretLabels -Secretname "MySecret" -Labels "type=application"
+    PS> > Set-SecretLabels -SecretName "MySecret" -Labels "type=application"
 .EXAMPLE
-    PS> > Set-SecretLabels -Secretname "MySecret" -Labels "type=application,format=json"
+    PS> > Set-SecretLabels -SecretName "MySecret" -Labels "type=application,format=json"
 #>
 
 function Set-SecretLabels {
