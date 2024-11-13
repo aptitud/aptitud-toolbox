@@ -21,6 +21,7 @@
         'Get-ToolboxCommands',
         'Get-ToolboxPath',
         'Get-Secret',
+        'Set-Secret',
         'Set-AccountSecret',
         'Set-SecretLabels',
         "Update-AptitudToolbox"
